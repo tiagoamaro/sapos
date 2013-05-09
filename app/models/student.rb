@@ -13,4 +13,9 @@ class Student < ActiveRecord::Base
   validates :name, :presence => true
   validates :cpf, :presence => true, :uniqueness => true
   
+  scope :from_professor, lambda { |professors|
+      joins(:enrollments => :advisements).where(:advisements => { :professor_id => professors } )
+  }
+
+
 end

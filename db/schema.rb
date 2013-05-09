@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130318204436) do
+ActiveRecord::Schema.define(:version => 20130508231824) do
 
   create_table "accomplishments", :force => true do |t|
     t.integer  "enrollment_id"
@@ -196,10 +196,28 @@ ActiveRecord::Schema.define(:version => 20130318204436) do
     t.string   "telephone1"
     t.string   "telephone2"
     t.string   "siape"
+    t.integer  "user_id"
   end
 
   add_index "professors", ["city_id"], :name => "professors_city_id_fkey"
   add_index "professors", ["state_id"], :name => "professors_state_id_fkey"
+  add_index "professors", ["user_id"], :name => "professors_user_id_fkey"
+
+  create_table "queries", :force => true do |t|
+    t.string   "querystring", :limit => 2000
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "query_variables", :force => true do |t|
+    t.integer  "query_id"
+    t.string   "name"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "query_variables", ["query_id"], :name => "query_variables_query_id_fkey"
 
   create_table "roles", :force => true do |t|
     t.string   "name",        :limit => 50, :null => false
@@ -356,6 +374,9 @@ ActiveRecord::Schema.define(:version => 20130318204436) do
 
   add_foreign_key "professors", ["city_id"], "cities", ["id"], :name => "professors_city_id_fkey"
   add_foreign_key "professors", ["state_id"], "states", ["id"], :name => "professors_state_id_fkey"
+  add_foreign_key "professors", ["user_id"], "users", ["id"], :name => "professors_user_id_fkey"
+
+  add_foreign_key "query_variables", ["query_id"], "queries", ["id"], :name => "query_variables_query_id_fkey"
 
   add_foreign_key "scholarship_durations", ["enrollment_id"], "enrollments", ["id"], :name => "scholarship_durations_enrollment_id_fkey"
   add_foreign_key "scholarship_durations", ["scholarship_id"], "scholarships", ["id"], :name => "scholarship_durations_scholarship_id_fkey"

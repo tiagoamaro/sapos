@@ -15,7 +15,12 @@ class Ability
     elsif role_id == Role::ROLE_COORDENACAO
       can :manage, :all
     elsif role_id == Role::ROLE_PROFESSOR
-      can :read, :all
+      professor_id  = user.professor.id
+
+      can :update, Student, Student.from_professor(professor_id)  do |student|
+        user.professor && Advisement.select(:professor_id).where(:enrollment_id => student.enrollment_ids).collect(&:professor_id).include?(user.professor.id)
+      end
+      can :manage, :all
     elsif role_id == Role::ROLE_SECRETARIA_BOLSAS
       can :read, :all
       can :update, [Scholarship, ScholarshipDuration]

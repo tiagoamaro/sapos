@@ -3,6 +3,8 @@ Sapos::Application.routes.draw do
 
   get "credits/show"
 
+  resources :queries do as_routes end
+
   resources :phase_durations do as_routes end
 
   resources :deferrals do as_routes end

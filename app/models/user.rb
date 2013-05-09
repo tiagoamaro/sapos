@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   validates :name, :presence => true, :uniqueness => true
 
   belongs_to :role
+  has_one :professor
 
   attr_accessible :email, :password, :password_confirmation, :remember_me
 

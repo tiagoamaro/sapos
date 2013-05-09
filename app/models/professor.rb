@@ -4,6 +4,8 @@ class Professor < ActiveRecord::Base
   has_many :scholarships, :dependent => :destroy
   has_many :advisement_authorizations, :dependent => :destroy
 
+  belongs_to :user
+
   validates :cpf, :presence => true, :uniqueness => true
   validates :name, :presence => true
 

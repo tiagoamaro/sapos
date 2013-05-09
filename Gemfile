@@ -4,6 +4,7 @@ gem 'rails', '3.0.20'
 gem "rails-erd", "~> 1.0.0"
 gem "kaminari"
 gem "automatic_foreign_key"
+gem 'nested_form'
 
 gem 'cancan'
 gem "devise"
