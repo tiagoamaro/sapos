@@ -23,31 +23,20 @@
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-<div id="steelmeshdark"></div>
-<div id="menubardiv"></div>
+<span class="notice"><%= notice %></span>
+<span class="alert"><%= alert %></span>
 
 <div id='main_content'>
   <div class='menu'>
     <div class='header'>
-
-      <% if session[:user_id] %>
-          <div id="logout_button">
-            <%= button_to 'Logout', logout_path, :method => :delete %>
-          </div>
-      <% end %>
-
-      <div class='title'>
-        <%= image_tag 'logoSapos.png' %>
+      <div class='logo'>
+        <%= image_tag 'logoSapos.jpg' %>
       </div>
       <div class="sub">
-        <span>
+        <span id="saposgif">
           <a href="http://www.ic.uff.br" target="_blank">Instituto de Computação /</a>
           <a href="http://www.uff.br" target="_blank">UFF</a>
-        </span>
-        <span id="saposgif">
+          |
           Versão <%= APP_VERSION %> <%= image_tag 'sapo.gif', :width => '20' %>
         </span>
       </div>
