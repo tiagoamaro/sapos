@@ -29,14 +29,15 @@
   <div class='menu'>
     <div class='header'>
       <div class='logo'>
-        <%= image_tag 'logoSapos.jpg' %>
+        <%= link_to root_path do %>
+          <%= image_tag 'logoSapos.jpg' %>
+        <% end %>
       </div>
       <div class="sub">
         <span id="saposgif">
-          <a href="http://www.ic.uff.br" target="_blank">Instituto de Computação /</a>
-          <a href="http://www.uff.br" target="_blank">UFF</a>
-          |
-          Versão <%= APP_VERSION %> <%= image_tag 'sapo.gif', :width => '20' %>
+          <a href="http://www.uff.br" target="_blank">UFF</a> |
+          Versão <%= APP_VERSION %> | <%= link_to 'Créditos', credits_show_path %>
+          <%= image_tag 'logoSapos-circle.png', :width => '20' %>
         </span>
       </div>
     </div>
@@ -52,13 +53,8 @@
         <div class='clear_float'></div>
       </div>
     </div>
-
-    <div id="credits_footer">
-      <%= link_to I18n.t("doc.credits"), credits_show_path %>
-    </div>
-
   </div>
 </div>
 
 </body>
-</html> 
+</html>
