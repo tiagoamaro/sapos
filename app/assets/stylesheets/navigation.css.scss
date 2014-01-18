@@ -242,28 +242,10 @@ body a {
 }
 
 #form_border{
-    border: 2px solid #bbc5d1;
+    border: 1px solid #bbc5d1;
     padding: 20px;
 
-    /*rounded border*/
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-
-    /*background gradient*/
-    background-image: linear-gradient(bottom, rgb(213,224,237) 47%, rgb(230,242,255) 97%);
-    background-image: -o-linear-gradient(bottom, rgb(213,224,237) 47%, rgb(230,242,255) 97%);
-    background-image: -moz-linear-gradient(bottom, rgb(213,224,237) 47%, rgb(230,242,255) 97%);
-    background-image: -webkit-linear-gradient(bottom, rgb(213,224,237) 47%, rgb(230,242,255) 97%);
-    background-image: -ms-linear-gradient(bottom, rgb(213,224,237) 47%, rgb(230,242,255) 97%);
-
-    background-image: -webkit-gradient(
-        linear,
-        left bottom,
-        left top,
-        color-stop(0.47, rgb(213,224,237)),
-        color-stop(0.97, rgb(230,242,255))
-    );
+    background: #deeef9;
 }
 
 #login_form{
