@@ -35,9 +35,7 @@
       </div>
       <div class="sub">
         <span id="saposgif">
-          <a href="http://www.uff.br" target="_blank">UFF</a> |
           Versão <%= APP_VERSION %> | <%= link_to 'Créditos', credits_show_path %>
-          <%= image_tag 'logoSapos-circle.png', :width => '20' %>
         </span>
       </div>
     </div>
@@ -52,6 +50,10 @@
         </div>
         <div class='clear_float'></div>
       </div>
+    </div>
+
+    <div id="credits-below-content">
+      <small>SAPOS desenvolvido por <%= link_to 'IC/UFF', 'http://www.ic.uff.br/', :target => '_blank' %></small>
     </div>
   </div>
 </div>
